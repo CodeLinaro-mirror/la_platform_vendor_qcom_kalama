@@ -115,11 +115,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.keymaster</name>
-        <transport>hwbinder</transport>
-        <fqname>@4.0::IKeymasterDevice/strongbox</fqname>
-    </hal>
-    <hal format="hidl">
        <name>android.hardware.gatekeeper</name>
        <transport>hwbinder</transport>
        <impl level="generic"></impl>
@@ -189,6 +184,13 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
             <name>ISensorsCalibrate</name>
             <instance>default</instance>
         </interface>
+    </hal>
+    <!-- IRADIO -->
+    <hal>
+      <name>android.hardware.radio</name>
+      <transport>hwbinder</transport>
+      <fqname>@1.2::ISap/slot1</fqname>
+      <fqname>@1.2::ISap/slot2</fqname>
     </hal>
     <!-- dpm QMI hal service -->
     <hal format="hidl">
