@@ -518,6 +518,22 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/ueventd-odm.rc:$(TARGET_COPY_OUT_ODM)/etc/ue
 PRODUCT_PACKAGES += vmmgr vmmgr.rc vmmgr.conf
 endif
 
+ifeq ($(BOARD_SUPPORTS_RAMDISK_EARLY_INIT), true)
+EARLY_SERVICES := early_services_init
+EARLY_SERVICES += early_init.conf
+EARLY_SERVICES += init_early_test
+EARLY_SERVICES += init_early_gpio_test
+EARLY_SERVICES += init_early_spi_test
+EARLY_SERVICES += early_chime
+EARLY_SERVICES += earlyVideo
+MM_GRAPHICS += libgsl_early
+MM_GRAPHICS += libC2D2_early
+ifeq ($(filter $(TARGET_BOARD_PLATFORM), gen4),$(TARGET_BOARD_PLATFORM))
+EARLY_SERVICES += early_init_gen4.conf
+endif
+PRODUCT_PACKAGES += $(EARLY_SERVICES)
+PRODUCT_PACKAGES += $(MM_GRAPHICS)
+endif
 
 ##Armv9-Tests##
 PRODUCT_PACKAGES_DEBUG += bti_test_prebuilt \
