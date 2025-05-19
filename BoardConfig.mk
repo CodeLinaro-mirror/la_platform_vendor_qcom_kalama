@@ -15,17 +15,6 @@ TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := kryo300
 
-
-BOARD_SUPPORTS_RAMDISK_EARLY_INIT := true
-ifeq ($(BOARD_SUPPORTS_RAMDISK_EARLY_INIT),true)
-CONFIG_EARLY_INIT := true
-TARGET_COPY_OUT_EARLY_SERVICES := vendor_early_services
-TEMPORARY_DISABLE_PATH_RESTRICTIONS := true
-#ifeq (,$(findstring $(TARGET_BOARD_PLATFORM)_au, $(TARGET_FS_CONFIG_GEN)))
-#TARGET_FS_CONFIG_GEN += device/qcom/$(TARGET_BOARD_PLATFORM)_au/config.fs
-#endif
-endif
-
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
@@ -134,19 +123,6 @@ BOARD_USES_METADATA_PARTITION := true
 BOARD_METADATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 BOARD_METADATAIMAGE_PARTITION_SIZE := 67108864
 
-BOARD_GENERIC_RAMDISK_KERNEL_MODULES_LOAD := \
-    snd_event_dlkm.ko \
-    q6_notifier_dlkm.ko \
-    apr_dlkm.ko \
-    adsp_loader_dlkm.ko \
-    q6_dlkm.ko \
-    machine_dlkm.ko \
-    stub_dlkm.ko \
-    platform_dlkm.ko \
-    native_dlkm.ko \
-    hdmi_dlkm.ko \
-
-
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -174,11 +150,6 @@ TARGET_USES_NEW_ION_API := true
 BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 androidboot.selinux=permissive
 BOARD_BOOTCONFIG := androidboot.hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3
 
-ifeq ($(BOARD_SUPPORTS_RAMDISK_EARLY_INIT),true)
-BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor_early_services/vendor/firmware_mnt/image androidboot.selinux=permissive  enforcing=0
-else
-BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image
-endif
 # TARGET_CONSOLE_ENABLED allows to override the default kernel configuration
 # true  -- override kernel configuration to enable console
 # false -- override kernel configuration to disable console
