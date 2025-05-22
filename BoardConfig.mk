@@ -173,7 +173,8 @@ BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 androidboot.sel
 BOARD_BOOTCONFIG := androidboot.hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3
 
 ifeq ($(BOARD_SUPPORTS_RAMDISK_EARLY_INIT),true)
-BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor_early_services/vendor/firmware_mnt/image androidboot.selinux=permissive  enforcing=0
+BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor_early_services/vendor/firmware_mnt/image,/vendor_early_services/firmware
+BOARD_BOOTCONFIG += androidboot.audio=audioreach
 else
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image
 endif
