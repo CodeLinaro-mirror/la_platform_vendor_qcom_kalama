@@ -526,6 +526,7 @@ EARLY_SERVICES += init_early_gpio_test
 EARLY_SERVICES += init_early_spi_test
 EARLY_SERVICES += early_chime
 EARLY_SERVICES += earlyVideo
+EARLY_SERVICES += esplash
 MM_GRAPHICS += libgsl_early
 MM_GRAPHICS += libC2D2_early
 ifeq ($(filter $(TARGET_BOARD_PLATFORM), gen4),$(TARGET_BOARD_PLATFORM))
