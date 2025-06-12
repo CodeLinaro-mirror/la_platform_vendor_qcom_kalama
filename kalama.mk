@@ -524,6 +524,7 @@ EARLY_SERVICES += early_init.conf
 EARLY_SERVICES += init_early_test
 EARLY_SERVICES += init_early_gpio_test
 EARLY_SERVICES += init_early_spi_test
+EARLY_SERVICES += init_early_lxc
 EARLY_SERVICES += early_chime
 EARLY_SERVICES += earlyVideo
 MM_GRAPHICS += libgsl_early
