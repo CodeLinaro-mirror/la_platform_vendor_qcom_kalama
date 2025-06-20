@@ -105,6 +105,9 @@ on post-fs-data
     # Enable WLAN cold boot calibration
     write /sys/kernel/cnss/fs_ready 1
 
+    # Create folder for ais_server
+    mkdir /dev/socket/camera 0770 system camera
+
 on post-fs-data && property:ro.build.type=userdebug && property:ro.baseband=mdm
     trigger create-ddi-file
 
