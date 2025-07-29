@@ -25,6 +25,9 @@ TEMPORARY_DISABLE_PATH_RESTRICTIONS := true
 #endif
 endif
 
+# for use AIS
+AUTO_CAM_AIS := true
+
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
