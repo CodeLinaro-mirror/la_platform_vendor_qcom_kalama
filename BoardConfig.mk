@@ -197,6 +197,11 @@ endif
 
 BOARD_KERNEL_CMDLINE += $(file < device/qcom/$(TARGET_BOARD_PLATFORM)-kernel/extra_cmdline)
 
+#disable cgroup v1
+BOARD_KERNEL_CMDLINE += cgroup_no_v1=all
+#isolate middle core 3,4;set middle core 3,4 tickless
+#BOARD_KERNEL_CMDLINE += isolcpus=3,4 nohz_full=3,4
+
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
