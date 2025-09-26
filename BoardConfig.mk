@@ -201,6 +201,7 @@ BOARD_KERNEL_CMDLINE += $(file < device/qcom/$(TARGET_BOARD_PLATFORM)-kernel/ext
 BOARD_KERNEL_CMDLINE += cgroup_no_v1=all
 #isolate middle core 3,4;set middle core 3,4 tickless
 #BOARD_KERNEL_CMDLINE += isolcpus=3,4 nohz_full=3,4
+BOARD_KERNEL_CMDLINE += no_hotplug_area=0x80000000,0x80000000;0x880000000,0x40000000;0xac0000000,0x40000000 dyn_memhotplug
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
