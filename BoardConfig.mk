@@ -172,7 +172,7 @@ BOARD_AVB_ODM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API := true
 
-BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 androidboot.selinux=enforcing
 BOARD_BOOTCONFIG := androidboot.hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3
 
 ifeq ($(BOARD_SUPPORTS_RAMDISK_EARLY_INIT),true)
