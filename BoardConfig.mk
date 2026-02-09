@@ -205,7 +205,7 @@ endif
 BOARD_KERNEL_CMDLINE += $(file < device/qcom/$(TARGET_BOARD_PLATFORM)-kernel/extra_cmdline)
 
 #disable cgroup v1
-BOARD_KERNEL_CMDLINE += cgroup_no_v1=all
+BOARD_KERNEL_CMDLINE += cgroup_no_v1=memory
 #isolate middle core 3,4;set middle core 3,4 tickless
 #BOARD_KERNEL_CMDLINE += isolcpus=3,4 nohz_full=3,4
 BOARD_KERNEL_CMDLINE += no_hotplug_area=0x80000000,0x80000000;0x880000000,0x40000000;0xac0000000,0x40000000 dyn_memhotplug
